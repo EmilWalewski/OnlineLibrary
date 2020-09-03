@@ -1,0 +1,246 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-background-color: rgb(37, 32, 32);
+    --nav-dark-background-color: rgb(48, 42, 42);
+    --body-background-color: rgb(51, 47, 47);
+}
+
+body{
+    color: white;
+    background-color: var(--body-background-color);
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container{
+    width: 100%;
+    padding: 0 2.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: wheat;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+nav{
+    width: 100%;
+    height: 9vh;
+    max-height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid red; */
+}
+
+.nav-list{
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--dark-background-color);
+    padding: 1.5rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    z-index: 1500;
+}
+
+.nav-item{
+    border-bottom: 2px solid white;
+}
+
+.nav-link{
+    display: block;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    color: white;
+    cursor: pointer;
+
+    /* padding: 4px 6px; */
+}
+
+.nested-list{
+    display: none;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    max-height: 90vh;
+    padding-left: 2.5rem;
+    transition: opacity .5s;
+    background-color: var(--body-background-color);
+
+    margin-top: .2rem;
+}
+
+.nav-item:hover .nested-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    opacity: 1;
+}
+
+.first-nested{
+   padding-top: 2rem;
+}
+
+.deep-nested-list li:first-child{
+    list-style: none;
+}
+
+.deep-nested-list a:not(.nav-link){
+    color: rgb(160, 60, 60);
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.nested-list-item{
+    padding: .3rem 0;
+}
+
+.nested-list-item:first-child{
+    padding-top: .9rem;
+}
+
+.nested-list-item a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.menu-toggle{
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1500;
+}
+
+.menu-toggle .stacks{
+    transform: rotate(270deg);
+}
+
+.menu-toggle .dispose{
+    display: none;
+}
+
+nav::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--nav-dark-background-color);
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity .5s;
+    z-index: 1000;
+}
+
+.open .stacks{
+    display: none;
+}
+
+.open .dispose{
+    display: block;
+}
+
+.open .nav-list{
+    transform: translateX(0);
+}
+
+.open nav::before{
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media(min-width: 600px){
+
+    .nav-list{
+        position: initial;
+        width: initial;
+        height: initial;
+        flex-direction: row;
+        justify-content: initial;
+        transform: initial;
+        transition: initial;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .nav-item{
+        margin: 0 1rem;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-item:hover{
+        border-bottom: 2px solid white;
+    }
+
+    .nav-item:last-child{
+        margin-right: 0;
+    }
+
+    .nav-link{
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle{
+        display: none;
+    }
+}
+
+
+.to-do{
+    border: 1px solid red;
+    margin-top: 15vh;
+}
+
+.boxes{
+    width: 100%;
+    padding: 1.2rem;
+    display: flex;
+    border: 1px solid blue;
+}
+
+.box{
+    text-align: center;
+    height: 60vh;
+    margin-right: 15px;
+    flex: 1 1 auto;
+    border: 1px solid green;
+    padding: .5rem;
+}
+
+.box:last-child{
+    margin-right: 0;
+}
+
