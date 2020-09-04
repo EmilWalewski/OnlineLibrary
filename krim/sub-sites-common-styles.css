@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 *{
     padding: 0;
@@ -10,17 +11,21 @@
 
 
 body{
-    color: white;
-    background-color: rgb(51, 47, 47);
+    /* color: white;
+    background-color: rgb(51, 47, 47); */
 }
 
 header{
-    padding: 2rem 4rem;
+    padding: 4rem 0;
 }
 
 header > h1{
     font-family: 'Noto Sans HK', sans-serif;
     letter-spacing: 4px;
+}
+
+img{
+    margin-top: 2rem;
 }
 
 section{
@@ -33,7 +38,10 @@ section{
 }
 
 .description{
+    width: 60%;
+    margin: 0 auto;
     padding: 0 2rem;
+    text-align: center;
 }
 
 .description-paragraph:first-child{
@@ -42,8 +50,9 @@ section{
 
 .description-paragraph{
     font-size: 1.1rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin-top: 2rem;
+    text-align: left;
 }
 
 .bold{
