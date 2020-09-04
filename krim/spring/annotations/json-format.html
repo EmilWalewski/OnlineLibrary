@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pure-css version2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../sub-sites-common-styles.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="description">
+
+                <header>
+                    <h1>@JsonFormat</h1>
+                </header>
+
+                <p class="description-paragraph">
+                    It is a Jackson annotation that is used to specify how to format fields and/or properties for <span
+                        class="bold"> JSON output.</span>
+                </p>
+
+                <p class="description-paragraph">
+                    Specifically, this annotation allows you to specify how to format Date and Calendar values according
+                    to a SimpleDateFormat format.
+                </p>
+
+                <p class="description-paragraph">
+                    We can also customize the format of our date fields using the @JsonFormat annotation. If we want our
+                    date fields in ISO 8601 format we just need to annotate our field someDate with:
+                </p>
+
+                <p class="description-paragraph center">
+                    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern= "yyyy-MM-dd") </br>
+                    private Calendar someDate;
+                </p>
+
+                <p class="description-paragraph">
+                    @JsonFormat can also be used to serialize subclasses of java.util.Collection and java.lang.Number as
+                    POJOs instead of collection elements and Number scalar value respectively. <span class="bold">It
+                        only works if the
+                        annotation is used on class level with @JsonFormat#shape=JsonFormat.Shape.OBJECT</span>
+                </p>
+
+                <p class="description-paragraph center">
+                    @JsonFormat(shape = JsonFormat.Shape.OBJECT)</br>
+                    public class ArrayListEx<T> extends AbstractList<T> {</br></br>
+                            private List<T> wrapperList = new ArrayList<>();</br>
+                                    .............</br>
+                                    }
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

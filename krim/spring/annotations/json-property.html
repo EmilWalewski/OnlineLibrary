@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pure-css version2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../sub-sites-common-styles.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="description">
+
+                <header>
+                    <h1>@JsonProperty</h1>
+                </header>
+
+                <p class="description-paragraph">
+                    We can specify a custom name for a field using the annotation @JsonProperty:
+                </p>
+
+                <p class="description-paragraph center">
+                    @JsonProperty("date")</br>
+                    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")</br>
+                    private Calendar someDate;
+                </p>
+
+                <p class="description-paragraph">
+                    With this annotation, the name of the annotated field will be date in the JSON representation: 
+                </p>
+
+                <p class="description-paragraph center">
+                  
+                    {</br>
+                    "fieldOne": "Some text",</br>
+                    "date": "2019-02-26"</br>
+                    }
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

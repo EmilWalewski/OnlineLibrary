@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>pure-css version2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../sub-sites-common-styles.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="description">
+
+                <header>
+                    <h1>@JsonValue</h1>
+                </header>
+
+                <p class="description-paragraph">
+                    We can annotate any method of the enum with @JsonValue and <span class="bold">the result of that
+                        method will be the
+                        value used for the serialization. </span>Let’s say we annotate the method getA():
+                </p>
+
+                <p class="description-paragraph center">
+                    public enum JacksonExampleEnum {</br>
+                    OPTION_1("0", "0"), OPTION_2("1", "1");</br></br>
+
+                    private String a;</br>
+                    private String b;</br></br>
+
+                    JacksonTestEnum(String a, String b) {</br>
+                    this.a = a;</br>
+                    this.b = b;</br>
+                    }</br></br>
+
+                    @JsonValue</br>
+                    public String getA() {</br>
+                    return a;</br>
+                    }</br></br>
+
+                    public String getB() {</br>
+                    return b;</br>
+                    }</br>
+                    }
+                </p>
+
+                <p class="description-paragraph">
+                    The resulting JSON representation will be:
+                </p>
+                <p class="description-paragraph center">
+                    {</br>
+                    "field_one": "Some text",</br>
+                    "some_date": "2019-02-26T18:58:38.283+0000",</br>
+                    "some_enum": "0"</br>
+                    }
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
